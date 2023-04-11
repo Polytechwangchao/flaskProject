@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监控系统</title>
+
+    <style>
+
+         body{
+                background: lightblue;
+            }
+
+        .header{
+            background: orange;
+            float:left;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav{
+            width: 100%;
+            height:40px ;
+            background: linear-gradient(orange,#e60);
+            position: absolute;top:80px;
+            float: left;
+        }
+        *{
+
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+
+        .navlist li{
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+
+        }
+        .navlist a{
+            color: rebeccapurple;
+            display:block;
+            font-weight:bold;
+            font-size: 15pt;
+
+        }
+        .navlist{
+            margin: auto;
+
+
+        }
+        .navlist a:hover{
+            background: #fa0;
+        }
+        .time{
+            width: 300px;
+            height:140px;
+            color: #ee6600;
+            position: absolute;left:0px; top:50px;
+            margin:auto;
+            line-height: 35px;
+            background: lightblue;
+            float: left;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        #dateTime{
+
+            text-align: center;
+            color: darkred;
+            font-size: medium;
+            font-weight: bold;
+            float: left;
+        }
+
+
+
+        .situation{
+            width: 100%;
+            height: 200px;
+            box-shadow: khaki;
+            color: red;
+            background: cadetblue;
+            position: absolute;left:0px; top:350px;
+            border-radius: 5px;
+        }
+        .situation ul{
+            list-style-type: none;
+
+        }
+        .situation ul li{
+            width: 150px;
+            background: orange;
+            padding: 20px 15px;
+            position: relative;
+            color: #880000;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .situation ul li ul{
+            list-style: none;
+            position: absolute;
+            text-align: center;
+            left: 150px;
+            display:none ;
+        }
+        .situation ul li ul li{
+            width: 150px;
+            height:5px;
+            background: orange;
+            padding: 15px 10px;
+            position: relative;
+            font-size: 15px;
+            font-weight: bolder;
+
+        }
+
+
+
+
+        .situation ul li:hover ul{
+            display: block;
+        }
+
+        a{
+            text-decoration: none;
+            display: inline-block;width: 150px;background-position: bottom;background-repeat: no-repeat;
+
+        }
+        a:hover{
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+<body>
+<script>
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "y+": this.getFullYear, //年
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "h+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds() //秒
+            };
+            if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        }
+        setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+    </script>
+
+<div class="header">
+    <h1> Fluke 仪 器 监 控 系 统 </h1>
+</div>
+<div class="nav">
+    <ul class="navlist">
+        <li><a href ="https://www.fluke.com.cn/">公司介绍</a></li>
+        <li><a href ="">故障管理</a></li>
+        <li><a href ="">指标看板</a></li>
+        <li><a href ="">报表管理</a></li>
+        <li><a href ="">数据分析</a></li>
+    </ul>
+    <div class="time">
+         <div id="dateTime"></div>
+    </div>
+
+</div>
+<div class="situation">
+        <ul>
+            <li><a href="">1号风电机集群</a>
+                <ul>
+                    <li><a href="hyper1.html">1号机器</a></li>
+                    <li><a href="">2号机器</a></li>
+                    <li><a href="">3号机器</a></li>
+                    <li><a href="">4号机器</a></li>
+                    <li><a href="">5号机器</a></li>
+                    <li><a href="">6号机器</a></li>
+                    <li><a href="">7号机器</a></li>
+                    <li><a href="">8号机器</a></li>
+                </ul>
+            </li>
+            <li><a href="">2号风电机集群</a>
+              <ul>
+                    <li><a href="">1号机器</a></li>
+                    <li><a href="">2号机器</a></li>
+                    <li><a href="">3号机器</a></li>
+                    <li><a href="">4号机器</a></li>
+                    <li><a href="">5号机器</a></li>
+                    <li><a href="">6号机器</a></li>
+                    <li><a href="">7号机器</a></li>
+                    <li><a href="">8号机器</a></li>
+                </ul>
+            </li>
+            <li><a href="">3号风电机集群</a>
+              <ul>
+                    <li><a href="">1号机器</a></li>
+                    <li><a href="">2号机器</a></li>
+                    <li><a href="">3号机器</a></li>
+                    <li><a href="">4号机器</a></li>
+                    <li><a href="">5号机器</a></li>
+                    <li><a href="">6号机器</a></li>
+                    <li><a href="">7号机器</a></li>
+                    <li><a href="">8号机器</a></li>
+                </ul>
+            </li>
+        </ul>
+</div>
+
+
+</body>
+</html>
