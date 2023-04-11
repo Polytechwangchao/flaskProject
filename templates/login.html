@@ -3,7 +3,10 @@
  <head>
      <meta  charset="UTF-8">
      <title>用户登录</title>
+     <link rel="stylesheet" href="../css/video_style.css">
      <style>
+
+
         body {
             background-image: url("static/assets/img/industry.jpg");
             background-repeat: no-repeat;
@@ -13,11 +16,8 @@
         .main {
             width: 500px;
             height: 350px;
-            box-shadow: 0 20px 50px 0 #e8e8e8;
-            background-color: white;
             border-radius: 10px;
-            position: absolute;
-            top: 0;
+            position: absolute;top:350px;
             right: 0;
             bottom: 0;
             left: 0;
@@ -53,8 +53,12 @@
     </style>
  </head>
  <body>
+    <div class="video-box">
+    <video class="video-background" preload="auto" loop playsinline autoplay src="3641.mp4" tabindex="-1" muted="muted"></video>
+    </div>
+
     <div class ="main">
-     <h2>欢迎访问监控系统</h2>
+     <h2>欢迎访问风电监控系统</h2>
      <form action="/login" method="POST" class="form">
          <h2><span class="text">用户名：</span><input type="text" name="username"></h2>
          <h2><span class="text">密码：</span><input type="password" name="pwd"></h2>
