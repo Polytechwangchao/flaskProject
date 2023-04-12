@@ -5,6 +5,28 @@
     <title>监控系统</title>
 
     <style>
+        .video_back {
+            width: 100% !important;
+            height: 100%;
+            /*生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。可以根据实际情况修改*/
+            position: absolute;
+            /*这里我试了一下好像只要是矩形的四个角的的点都行,也就是说right:0;bottom:0;也可以*/
+            left: 0;
+            top: 200px;
+            /*将视频放在元素的堆叠顺序最底层，以防覆盖其他东西*/
+            z-index: -9999;
+            /*被替换的内容正好填充元素的内容框。整个对象将完全填充此框。如果对象的宽高比与内容框不相匹配，那么该对象将被拉伸以适应内容框。*/
+            object-fit: cover;
+        }
+        .parent{
+            position:relative;
+            width:100%;
+            height:1280px;"
+            transform: translate(0,0);
+
+        }
+
+
 
          body{
                 background: lightblue;
@@ -16,13 +38,15 @@
             width: 100%;
             padding: 20px;
             text-align: center;
+
         }
         .nav{
             width: 100%;
-            height:40px ;
+            height:125px ;
             background: linear-gradient(orange,#e60);
             position: absolute;top:80px;
             float: left;
+            z-index: 1;
         }
         *{
 
@@ -32,12 +56,15 @@
             text-decoration: none;
         }
 
+        .navlist{
 
+        }
         .navlist li{
+
             float: left;
             width: 150px;
-            height: 40px;
-            line-height: 40px;
+            height: 60px;
+            line-height: 80px;
             text-align: center;
 
         }
@@ -45,25 +72,24 @@
             color: rebeccapurple;
             display:block;
             font-weight:bold;
-            font-size: 15pt;
+            font-size: 20pt;
 
         }
         .navlist{
             margin: auto;
-
-
         }
         .navlist a:hover{
             background: #fa0;
         }
+
+
         .time{
             width: 300px;
-            height:140px;
+            height:80px;
             color: #ee6600;
-            position: absolute;left:0px; top:50px;
+            position: absolute;left:20px; top:140px;
             margin:auto;
             line-height: 35px;
-            background: lightblue;
             float: left;
             border-radius: 10px 10px 10px 10px;
         }
@@ -72,47 +98,42 @@
 
             text-align: center;
             color: darkred;
-            font-size: medium;
-            font-weight: bold;
+            font-size: 18pt;
+            font-weight: bolder;
             float: left;
         }
 
 
 
-        .situation{
-            width: 100%;
-            height: 200px;
-            box-shadow: khaki;
-            color: red;
-            background: cadetblue;
-            position: absolute;left:0px; top:350px;
-            border-radius: 5px;
-        }
-        .situation ul{
+        .parent ul{
             list-style-type: none;
 
+
+
         }
-        .situation ul li{
+        .parent ul li{
+
             width: 150px;
-            background: orange;
-            padding: 20px 15px;
-            position: relative;
-            color: #880000;
-            font-size: 20px;
+            height: 200px;
+            background: url(风电.png) no-repeat 0rem 1rem;
+            background-size: 10rem 8rem;
+            text-align: center;
+            line-height: 20px;
+            font-size: 15pt;
             font-weight: bolder;
+
         }
-        .situation ul li ul{
+        .parent ul li ul{
             list-style: none;
             position: absolute;
-            text-align: center;
             left: 150px;
             display:none ;
         }
-        .situation ul li ul li{
-            width: 150px;
+        .parent ul li ul li{
+            width: 140px;
             height:5px;
-            background: orange;
-            padding: 15px 10px;
+            background:darkturquoise;
+            padding: 14px 5px;
             position: relative;
             font-size: 15px;
             font-weight: bolder;
@@ -120,9 +141,7 @@
         }
 
 
-
-
-        .situation ul li:hover ul{
+        .parent ul li:hover ul{
             display: block;
         }
 
@@ -135,6 +154,26 @@
             color: white;
 
         }
+
+        .icon{
+            width: 400px;
+            height: 200px;
+            white-space:nowrap;
+            position: absolute;top:45%;left:50%;
+
+        }
+        .icon1{
+            width: 400px;
+            height: 200px;
+            position: absolute;top:30%;left:65%;
+        }
+        .icon2{
+            width: 400px;
+            height: 200px;
+            position: absolute;top:70%;left:55%;
+
+        }
+
 
     </style>
 
@@ -159,7 +198,7 @@
     </script>
 
 <div class="header">
-    <h1> Fluke 仪 器 监 控 系 统 </h1>
+    <h1> Fluke  仪  器  监  控  系  统 </h1>
 </div>
 <div class="nav">
     <ul class="navlist">
@@ -174,47 +213,64 @@
     </div>
 
 </div>
-<div class="situation">
+
+
+<div class="parent">
+    <video class="video_back" src="earth.mp4" muted autoplay="autoplay" loop="loop"></video>
+    <div class="icon">
         <ul>
-            <li><a href="">1号风电机集群</a>
+            <li><a href="监控系统.html"></a>
                 <ul>
                     <li><a href="hyper1.html">1号机器</a></li>
-                    <li><a href="">2号机器</a></li>
-                    <li><a href="">3号机器</a></li>
-                    <li><a href="">4号机器</a></li>
-                    <li><a href="">5号机器</a></li>
-                    <li><a href="">6号机器</a></li>
-                    <li><a href="">7号机器</a></li>
-                    <li><a href="">8号机器</a></li>
+                    <li><a href="hyper1.html">2号机器</a></li>
+                    <li><a href="hyper1.html">3号机器</a></li>
+                    <li><a href="hyper1.html">4号机器</a></li>
+                    <li><a href="hyper1.html">5号机器</a></li>
+                    <li><a href="hyper1.html">6号机器</a></li>
+                    <li><a href="hyper1.html">7号机器</a></li>
+                    <li><a href="hyper1.html">8号机器</a></li>
                 </ul>
             </li>
-            <li><a href="">2号风电机集群</a>
+
+        </ul>
+    </div>
+    <div class="icon1">
+        <ul>
+            <li><a href=""></a>
               <ul>
-                    <li><a href="">1号机器</a></li>
-                    <li><a href="">2号机器</a></li>
-                    <li><a href="">3号机器</a></li>
-                    <li><a href="">4号机器</a></li>
-                    <li><a href="">5号机器</a></li>
-                    <li><a href="">6号机器</a></li>
-                    <li><a href="">7号机器</a></li>
-                    <li><a href="">8号机器</a></li>
+                    <li><a href="hyper1.html">1号机器</a></li>
+                    <li><a href="hyper1.html">2号机器</a></li>
+                    <li><a href="hyper1.html">3号机器</a></li>
+                    <li><a href="hyper1.html">4号机器</a></li>
+                    <li><a href="hyper1.html">5号机器</a></li>
+                    <li><a href="hyper1.html">6号机器</a></li>
+                    <li><a href="hyper1.html">7号机器</a></li>
+                    <li><a href="hyper1.html">8号机器</a></li>
                 </ul>
             </li>
-            <li><a href="">3号风电机集群</a>
+        </ul>>
+    </div>
+    <div class="icon2">
+        <ul>
+            <li><a href=""></a>
               <ul>
-                    <li><a href="">1号机器</a></li>
-                    <li><a href="">2号机器</a></li>
-                    <li><a href="">3号机器</a></li>
-                    <li><a href="">4号机器</a></li>
-                    <li><a href="">5号机器</a></li>
-                    <li><a href="">6号机器</a></li>
-                    <li><a href="">7号机器</a></li>
-                    <li><a href="">8号机器</a></li>
+                    <li><a href="hyper1.html">1号机器</a></li>
+                    <li><a href="hyper1.html">2号机器</a></li>
+                    <li><a href="hyper1.html">3号机器</a></li>
+                    <li><a href="hyper1.html">4号机器</a></li>
+                    <li><a href="hyper1.html">5号机器</a></li>
+                    <li><a href="hyper1.html">6号机器</a></li>
+                    <li><a href="hyper1.html">7号机器</a></li>
+                    <li><a href="hyper1.html">8号机器</a></li>
                 </ul>
             </li>
         </ul>
-</div>
+    </div>
 
+
+</div>
 
 </body>
 </html>
+
+
