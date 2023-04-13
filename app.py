@@ -14,7 +14,7 @@ def login():
         return render_template("监控系统.html")
     else:
         return render_template("login.html",msg="登录失败")
-
+#text
 
 @app.route('/')
 def index():
